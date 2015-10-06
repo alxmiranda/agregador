@@ -1,0 +1,25 @@
+/*  CONFIGURAÇÕES
+    ========================================================================== */
+	@import "configuracoes/_variaveis.scss";
+
+/*  FERRAMENTAS
+    ========================================================================== */
+	@import "ferramentas/_functions.scss";
+	@import "ferramentas/_grid.scss";
+
+/*  ESTILOS GENERICOS
+    ========================================================================== */
+    @import "_normalize.scss";
+
+/*  ESTILOS BASICOS
+    ========================================================================== */
+	@import "_normalize.scss";
+
+/*  OBJETOS
+    ========================================================================== */
+    @import "_botoes.scss";
+
+/*  COMPONENTES
+    ========================================================================== */
+    @import "_topo.scss";
+    @import "_box-conteudo.scss";
