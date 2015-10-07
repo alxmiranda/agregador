@@ -4,6 +4,7 @@
         <title>Agregador de Links</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="assets/js/scripts.min.js"></script>
         <script>
             var sky = document.getElementById("sky");
 
