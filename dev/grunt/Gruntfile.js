@@ -27,11 +27,11 @@ module.exports = function(grunt) {
 			dist:{
 				options:{
 					style: 'compressed',
-          sourcemap: 'none',
-          noCache: true
+	  			sourcemap: 'none',
+	  			noCache: true
 				},
 				files:{
-					'<%= dir.dist.css %>/style.css': '<%= dir.dev.sass %>/estilo.scss'
+					'<%= dir.dist.css %>/style.css': '<%= dir.dev.sass %>/style.scss'
 				}
 			},
 
@@ -39,22 +39,54 @@ module.exports = function(grunt) {
 			dev:{
 				options:{
 					style: 'extended',
-          sourcemap: 'none',
-          noCache: true
+					sourcemap: 'none',
+					noCache: true
 				},
 				files:{
-					'<%= dir.dev.css %>/style.css': '<%= dir.dev.sass %>/estilo.scss'
+					'<%= dir.dev.css %>/style.css': '<%= dir.dev.sass %>/style.scss'
 				}
 			}
-		}
+		},
+
+	    autoprefixer: {
+	      file: {
+	        src: ['<%= dirs.dev.css %>/style.css', '<%= dirs.dist.css %>/style.css']
+	      },
+	    },
 
 		// Javascript
+		uglify:{
+	      my_targets:{
+	      
+	        files:{
+	          '<%= dir.dist.js %>/scripts.min.js':'<%= dir.dev.js %>/_menu.js'
+	        }
+	      }
+	    },
 
+	    // Observar alterações
+		watch:{
+			sass:{
+				files:[
+	        '<%= dir.dev.sass %>/configuracoes/*.scss',
+	        '<%= dir.dev.sass %>/ferramentas/*.scss',
+	        '<%= dir.dev.sass %>/estilos-genericos/*.scss',
+	        '<%= dir.dev.sass %>/estilos-basicos/*.scss',
+	        '<%= dir.dev.sass %>/objetos/*.scss',
+	        '<%= dir.dev.sass %>/componentes/*/*.scss',
+	        '<%= dir.dev.sass %>/style.scss'
+				],
+			tasks:['sass', 'autoprefixer']
+			}
+		}
 	 }
 
 		grunt.initConfig(configTasks);
 
 	  // Carrega os pacotes para realizar tarefas
 	  grunt.loadNpmTasks('grunt-contrib-sass');
-	  grunt.registerTask('default', ['sass']);
+	  grunt.loadNpmTasks('grunt-contrib-uglify');
+	  grunt.loadNpmTasks('grunt-contrib-watch');
+
+	  grunt.registerTask('default', ['sass', 'uglify']);
 }
