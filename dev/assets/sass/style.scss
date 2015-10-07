@@ -9,17 +9,17 @@
 
 /*  ESTILOS GENERICOS
     ========================================================================== */
-    @import "_normalize.scss";
+    @import "estilos-genericos/_normalize.scss";
 
 /*  ESTILOS BASICOS
     ========================================================================== */
-	@import "_normalize.scss";
+	
 
 /*  OBJETOS
     ========================================================================== */
-    @import "_botoes.scss";
+    @import "objetos/_botoes.scss";
 
 /*  COMPONENTES
     ========================================================================== */
-    @import "_topo.scss";
-    @import "_box-conteudo.scss";
+    @import "componentes/_topo.scss";
+    @import "componentes/_box-conteudo.scss";
