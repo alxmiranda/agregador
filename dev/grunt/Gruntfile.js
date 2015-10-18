@@ -1,7 +1,5 @@
 module.exports = function(grunt) {
 	 'use strict';
-
-
 	 var configTasks = {
 		// Carregando os pacotes
 		pkg: grunt.file.readJSON( 'package.json' ),
@@ -26,7 +24,7 @@ module.exports = function(grunt) {
 			// Compila .css minificado
 			dist:{
 				options:{
-					style: 'compressed',
+				style: 'compressed',
 	  			sourcemap: 'none',
 	  			noCache: true
 				},
@@ -50,7 +48,7 @@ module.exports = function(grunt) {
 
 	    autoprefixer: {
 	      file: {
-	        src: ['<%= dirs.dev.css %>/style.css', '<%= dirs.dist.css %>/style.css']
+	        src: ['<%= dir.dev.css %>/style.css', '<%= dir.dist.css %>/style.css']
 	      },
 	    },
 
@@ -73,10 +71,14 @@ module.exports = function(grunt) {
 	        '<%= dir.dev.sass %>/estilos-genericos/*.scss',
 	        '<%= dir.dev.sass %>/estilos-basicos/*.scss',
 	        '<%= dir.dev.sass %>/objetos/*.scss',
-	        '<%= dir.dev.sass %>/componentes/*/*.scss',
+	        '<%= dir.dev.sass %>/componentes/*.scss',
 	        '<%= dir.dev.sass %>/style.scss'
 				],
 			tasks:['sass', 'autoprefixer']
+			},
+			js:{
+				files:['<%= dir.dev.js %>/_menu.js'],
+				tasks:['uglify']
 			}
 		}
 	 }
@@ -85,8 +87,9 @@ module.exports = function(grunt) {
 
 	  // Carrega os pacotes para realizar tarefas
 	  grunt.loadNpmTasks('grunt-contrib-sass');
+	  grunt.loadNpmTasks('grunt-autoprefixer');
 	  grunt.loadNpmTasks('grunt-contrib-uglify');
 	  grunt.loadNpmTasks('grunt-contrib-watch');
 
-	  grunt.registerTask('default', ['sass', 'uglify', 'watch']);
+	  grunt.registerTask('default', ['sass', 'autoprefixer', 'uglify', 'watch']);
 }
