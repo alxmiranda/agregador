@@ -69,7 +69,7 @@ body {
 }
 * {margin:0; padding:0;}
 /* Largura maxima do bloco geral do site */
-.container{	
+.container{
 	max-width:1200px;
 	margin:0 auto;
 	@include clearfix;
