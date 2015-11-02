@@ -11,21 +11,24 @@
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
 	font-family: Flaticon;
-	font-size: 20px;
-	font-style: normal;
-	margin-left: 20px;
-}.flaticon-handgesture22:before {
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}.flaticon-close2:before {
 	content: "\e000";
 }
-.flaticon-like75:before {
+.flaticon-handgesture22:before {
 	content: "\e001";
 }
 .flaticon-magnifying-glass6:before {
 	content: "\e002";
 }
-.flaticon-menu62:before {
+.flaticon-menu61:before {
 	content: "\e003";
 }
 .flaticon-sharing2:before {
 	content: "\e004";
+}
+.flaticon-speechbubble21:before {
+	content: "\e005";
 }
