@@ -14,8 +14,11 @@
 	font-size: em(20);
 	font-style: normal;
 }
-.icone-like:before {
+.icone-fechar:before {
 	content: "\e000";
+}
+.icone-like:before {
+	content: "\e001";
 }
 .icone-busca:before {
 	content: "\e002";
