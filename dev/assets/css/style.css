@@ -377,6 +377,9 @@ td, th {
 
 /*  ESTILOS BASICOS
     ========================================================================== */
+body {
+  background: none; }
+
 /*  OBJETOS
     ========================================================================== */
 @font-face {
@@ -390,8 +393,11 @@ td, th {
   font-size: 1.25em;
   font-style: normal; }
 
-.icone-like:before {
+.icone-fechar:before {
   content: "\e000"; }
+
+.icone-like:before {
+  content: "\e001"; }
 
 .icone-busca:before {
   content: "\e002"; }
@@ -409,21 +415,89 @@ td, th {
   width: 9.875em;
   height: 3.125em;
   margin: 0.625em auto;
-  background: #333; }
+  background: #232323; }
 
-.nav-e-busca {
-  margin-bottom: 1.25em;
-  background: black;
+.navegacao-topo {
+  background: #232323;
   color: #fff; }
-.nav-e-busca .container-topo {
+.navegacao-topo .container-topo {
   display: inline;
   float: left;
   width: 81.29252%;
   margin: 0 1.02041%;
   margin-left: 9.35374%; }
-.nav-e-busca .container-topo [class^="icone-"] {
-  padding: 0.9375em 0; }
-.nav-e-busca .container-topo .icone-menu {
+.navegacao-topo .container-topo [class^="icone-"] {
+  padding: 0.9375em 0;
+  cursor: pointer; }
+.navegacao-topo .container-topo .icone-menu {
   float: left; }
-.nav-e-busca .container-topo .icone-busca {
+.navegacao-topo .container-topo .icone-busca {
   float: right; }
+
+.menu {
+  width: 12.5em;
+  height: 100%;
+  position: absolute;
+  background: #232323;
+  -webkit-transform: translateX(-12.5em);
+      -ms-transform: translateX(-12.5em);
+          transform: translateX(-12.5em);
+  -webkit-transition: 0.5s;
+          transition: 0.5s; }
+.menu .icone-fechar {
+  float: right;
+  color: #e5e5e5;
+  padding: 1.5em 1.0625em;
+  cursor: pointer; }
+.menu .icone-fechar:hover, .menu .icone-fechar:active, .menu .icone-fechar:focus {
+  color: #cccccc; }
+.menu ul {
+  list-style: none;
+  position: relative; }
+.menu ul a {
+  display: block;
+  float: left;
+  width: 100%;
+  margin-bottom: 0.125em;
+  padding: 1.5em 0 1.5em 14.5%;
+  background: #fff;
+  text-decoration: none;
+  color: #333;
+  border-left: 0.0625em solid #e5e5e5; }
+.menu ul a:hover, .menu ul a:active, .menu ul a:focus {
+  background: #e5e5e5;
+  color: #232323; }
+
+/* quando a classe menu estiver desativado */
+.topo, main {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: 0.5s;
+          transition: 0.5s; }
+
+/* quando a classe ativar o menu */
+.menu-ativo main, .menu-ativo .topo {
+  -webkit-transform: translateX(12.5em);
+      -ms-transform: translateX(12.5em);
+          transform: translateX(12.5em);
+  -webkit-transition: 0.5s;
+          transition: 0.5s; }
+.menu-ativo .menu {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: 0.5s;
+          transition: 0.5s; }
+.menu-ativo body {
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transition: 0.5s;
+          transition: 0.5s;
+  overflow-x: hidden; }
+
+/*Classe utilitaria para esconder coisas*/
+.u-esconder {
+  display: none;
+  -webkit-transform: 0.1s;
+      -ms-transform: 0.1s;
+          transform: 0.1s; }
