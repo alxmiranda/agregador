@@ -57,7 +57,10 @@ module.exports = function(grunt) {
 	      my_targets:{
 	      
 	        files:{
-	          '<%= dir.dist.js %>/scripts.min.js':'<%= dir.dev.js %>/_menu.js'
+	          '<%= dir.dist.js %>/scripts.min.js':
+	          [
+	          '<%= dir.dev.js %>/_menu.js', '<%= dir.dev.js %>/_box-conteudo.js'
+	          ],
 	        }
 	      }
 	    },
@@ -77,7 +80,7 @@ module.exports = function(grunt) {
 			tasks:['sass', 'autoprefixer']
 			},
 			js:{
-				files:['<%= dir.dev.js %>/_menu.js'],
+				files:'<%= dir.dev.js %>/*.js',
 				tasks:['uglify']
 			}
 		}
