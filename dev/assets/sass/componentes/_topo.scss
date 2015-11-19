@@ -20,8 +20,12 @@
 		.icone-menu{
 			float:left;
 		}
-		.icone-busca{
+		.icone-buscar{
 			float:right;
+		}
+
+		@media screen and (min-width:$screen-lg){
+			@include column(12);
 		}
 	}
 }

@@ -27,7 +27,7 @@
 	<div class="container">
 		<div class="container-topo">
 		<div class="icone-menu"></div>
-		<div class="icone-busca"></div>
+		<div class="icone-buscar"></div>
 		</div>
 	</div>
 	</div>
