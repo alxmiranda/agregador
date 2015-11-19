@@ -14,8 +14,3 @@ var estiloBox = ~function(){
 	}
 
 }()
-
-mongoimport --db be-mean --collection restaurantes --drop --file restaurantes.json
-mongoimport --db be-mean --collection restaurantes --drop --file restaurantes.json
-
-E QUERY    SyntaxError: Unexpected identifier
