@@ -12,5 +12,10 @@ var showMenu = function(){
 		btnMostrar.classList.remove('u-esconder');
 		html.classList.remove('menu-ativo');
 	}, true);
+
+	document.addEventListener("click", function(){
+		btnMostrar.classList.remove('u-esconder');
+		html.classList.remove('menu-ativo');
+	}, true);
 }
 showMenu();
